@@ -1,5 +1,5 @@
 #!/bin/bash
-source info_funcs.sh
+source ./info_funcs.sh
 warn_text "adding functions wkey, rsync_to_server, create_ssh_key"
 function wkey {
   sshpath=$HOME/.ssh/$1
