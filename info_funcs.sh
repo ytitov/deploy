@@ -12,6 +12,10 @@ function red_text {
         color $RED "$1"
 }
 
+function yellow_text {
+        color $YELLOW "$1"
+}
+
 function warn_text {
         color $YELLOW "$1"
 }
@@ -22,19 +26,19 @@ function list_item {
 
 warn_text "adding functions wkey, rsync_to_server, create_ssh_key"
 function wkey {
-  sshpath=$HOME/.ssh/$1
-  warn_text "Contents of $HOME/.ssh: "
-  warn_text "$(ls $HOME/.ssh/*.pub)"
-  shift
-  restargs=$@
+  sshpath=$HOME/.ssh/$1;
+  warn_text "Contents of $HOME/.ssh: ";
+  warn_text "$(ls $HOME/.ssh/*.pub)";
+  shift;
+  restargs=$@;
   #echo "running eval `ssh-agent -s`"
   red_text "Usage:"
-  warn_text "EXAMPLE: './wkey.sh id_key_2 git push git@github.com:ParseSoftware/docker-wordpress-base.git brewbids:brewbids -f'"
-  commds="ssh-add $sshpath; $restargs"
-  red_text "Running command: $restargs"
+  warn_text "EXAMPLE: './wkey.sh id_key_2 git push git@github.com:ParseSoftware/docker-wordpress-base.git brewbids:brewbids -f'";
+  commds="ssh-add $sshpath; $restargs";
+  red_text "Running command: $restargs";
   #echo "running command: ssh-agent bash -c $commds"
   #eval `ssh-agent -s`
-  ssh-agent bash -c "$commds"
+  ssh-agent bash -c "$commds";
 }
 
 function rsync_to_server {
