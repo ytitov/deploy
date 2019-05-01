@@ -10,7 +10,7 @@ function wkey {
   #echo "running eval `ssh-agent -s`"
   red_text "Usage:"
   warn_text "EXAMPLE: './wkey.sh id_key_2 git push git@github.com:ParseSoftware/docker-wordpress-base.git brewbids:brewbids -f'"
-  commds="ssh-add $sshpath; $restargs"
+  commds="ssh-add $sshpath && $restargs"
   red_text "Running command: $restargs"
   #echo "running command: ssh-agent bash -c $commds"
   #eval `ssh-agent -s`
