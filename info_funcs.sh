@@ -1,3 +1,4 @@
+BLUE='\033[0;34m'
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 WHITE='\033[0;37m'
@@ -5,7 +6,7 @@ NC='\033[0m'
 
 
 function color {
-        echo -e "${1}${2}${NC}\n"
+        echo -e "${1}${2}${NC}"
 }
 
 function red_text {
@@ -18,6 +19,10 @@ function yellow_text {
 
 function warn_text {
         color $YELLOW "$1"
+}
+
+function info_text {
+        color $BLUE "$1"
 }
 
 function list_item {
